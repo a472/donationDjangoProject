@@ -1,0 +1,23 @@
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>donations</title>
+</head>
+<body>
+<h1> All Donations</h1>
+
+<ul>
+    {% for donation in donations %}
+    <li>
+        <strong>Donor:</strong> {{ donation.donor.first_name }} {{ donation.donor.last_name }}<br>
+        <strong>Amount:</strong> ₹{{ donation.amount }}<br>
+        <strong>Date:</strong> {{ donation.donation_date }}
+    </li>
+    {% empty %}
+    <li>No donations found.</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
