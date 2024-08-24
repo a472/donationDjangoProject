@@ -4,7 +4,7 @@ from .models import Donations
 from django.utils import translation
 
 def index(request):
-    return HttpResponse("Hello Geeks")
+    return render(request, 'index.html')
 
 def say_hello(request):
     return render(request, 'hello.html', {'name': 'Abhishek'})
